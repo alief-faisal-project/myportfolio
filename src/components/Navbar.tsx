@@ -12,7 +12,7 @@ const navItems = [
       { title: "Pemetaan Petani", url: "https://pemetaanpoktan.vercel.app/" },
     ],
   },
-  { id: "experience", label: "Experience" },
+  { id: "experience", label: "Learning" },
   { id: "education", label: "Education" },
 ];
 
