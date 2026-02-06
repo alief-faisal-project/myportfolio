@@ -68,7 +68,7 @@ const FloatingContact = () => {
 
   return (
     <div
-      className={`fixed bottom-6 right-3 md:right-6 z-50
+      className={`fixed bottom-6 right-0.5 md:right-6 z-50
       transition-all duration-500 ease-in-out
       ${
         isHidden
@@ -78,10 +78,10 @@ const FloatingContact = () => {
     >
       {/* Dropdown */}
       <div
-        className={`absolute bottom-full right-0 mb-6
+        className={`absolute bottom-full right-0 mb-7
         bg-background border border-border
-        rounded-xl shadow-2xl
-        p-4 min-w-64 max-h-72 overflow-y-auto
+        rounded-xl 
+        p-4 min-w-60 max-h-72 overflow-y-auto
         transition-all duration-300
         ${
           isOpen
