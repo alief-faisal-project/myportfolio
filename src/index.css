@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System - Clean Portfolio
+   Font: Barlow Condensed
+   Colors: Pure white & black
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+
+    --radius: 0.5rem;
+
+    /* Custom */
+    --font-heading: 'Barlow Condensed', sans-serif;
+    --container-max: 1200px;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto px-6;
+    max-width: var(--container-max);
+  }
+
+  .nav-link {
+    @apply relative uppercase tracking-wider text-lg font-semibold transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-foreground transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold uppercase tracking-wide mb-12;
+  }
+
+  .project-card {
+    @apply bg-secondary border border-border p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .floating-pill {
+    @apply fixed bottom-6 right-6 bg-primary text-primary-foreground px-6 py-3 rounded-full shadow-lg cursor-pointer transition-all duration-300 hover:scale-105 z-50;
+  }
+
+  .contact-dropdown {
+    @apply absolute bottom-full right-0 mb-3 bg-background border border-border rounded-lg shadow-xl p-4 min-w-64 opacity-0 invisible translate-y-2 transition-all duration-300;
+  }
+
+  .contact-dropdown.open {
+    @apply opacity-100 visible translate-y-0;
+  }
+
+  .hamburger-line {
+    @apply block w-6 h-0.5 bg-foreground transition-all duration-300;
+  }
+}
+
+/* Sound Wave Animations */
+@keyframes wave-1 {
+  0%, 100% { height: 8px; }
+  50% { height: 20px; }
+}
+
+@keyframes wave-2 {
+  0%, 100% { height: 12px; }
+  50% { height: 16px; }
+}
+
+@keyframes wave-3 {
+  0%, 100% { height: 16px; }
+  50% { height: 8px; }
+}
+
+@keyframes wave-4 {
+  0%, 100% { height: 12px; }
+  50% { height: 20px; }
+}
+
+@keyframes wave-5 {
+  0%, 100% { height: 8px; }
+  50% { height: 14px; }
+}
+
+.animate-wave-1 {
+  animation: wave-1 0.8s ease-in-out infinite;
+}
+
+.animate-wave-2 {
+  animation: wave-2 0.6s ease-in-out infinite 0.1s;
+}
+
+.animate-wave-3 {
+  animation: wave-3 0.7s ease-in-out infinite 0.2s;
+}
+
+.animate-wave-4 {
+  animation: wave-4 0.5s ease-in-out infinite 0.3s;
+}
+
+.animate-wave-5 {
+  animation: wave-5 0.9s ease-in-out infinite 0.4s;
+}
