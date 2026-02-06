@@ -33,7 +33,7 @@ const FloatingContact = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          //  MOBILE: hide di hero & footer
+          // MOBILE: hide di hero
           if (
             isMobile &&
             hero &&
@@ -68,7 +68,7 @@ const FloatingContact = () => {
 
   return (
     <div
-      className={`fixed bottom-6 right-6 z-50
+      className={`fixed bottom-6 right-3 md:right-6 z-50
       transition-all duration-500 ease-in-out
       ${
         isHidden
